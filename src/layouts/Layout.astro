@@ -1,0 +1,81 @@
+---
+// arquivo: src/layouts/Layout.astro
+interface Props {
+	title: string;
+	description: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<!doctype html>
+<html lang="pt-BR">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+		<meta name="description" content={description} />
+		
+		<!-- Open Graph / SEO -->
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+
+		<!-- Google Fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&family=Syne:wght@400;700;800&display=swap" rel="stylesheet">
+	</head>
+	<body>
+		<slot />
+	</body>
+</html>
+
+<style is:global>
+	:root {
+		--color-primary: #7C3AED;
+		--color-secondary: #06B6D4;
+		--color-bg: #080810;
+		--color-bg-card: rgba(255, 255, 255, 0.04);
+		--color-text: #f0f0f5;
+		--color-text-muted: rgba(240, 240, 245, 0.55);
+		--color-border: rgba(255, 255, 255, 0.08);
+		--font-display: 'Syne', sans-serif;
+		--font-body: 'DM Sans', sans-serif;
+		--radius: 16px;
+		--radius-sm: 8px;
+		--shadow-glow: 0 0 40px rgba(124, 58, 237, 0.2);
+		--max-width: 1180px;
+		--section-padding: clamp(80px, 12vw, 140px);
+	}
+
+	* { margin: 0; padding: 0; box-sizing: border-box; -webkit-font-smoothing: antialiased; }
+
+	html { scroll-behavior: smooth; background: var(--color-bg); color: var(--color-text); font-family: var(--font-body); }
+	body { overflow-x: hidden; }
+	h1, h2, h3 { font-family: var(--font-display); line-height: 1.1; }
+	p { line-height: 1.6; color: var(--color-text-muted); }
+	.container { max-width: var(--max-width); margin: 0 auto; padding: 0 24px; }
+
+	@keyframes fadeUp {
+		from { opacity: 0; transform: translateY(30px); }
+		to { opacity: 1; transform: translateY(0); }
+	}
+
+	.stagger-in > * { opacity: 0; }
+	.stagger-in.visible > * { animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+	.stagger-in.visible > *:nth-child(1) { animation-delay: 0.1s; }
+	.stagger-in.visible > *:nth-child(2) { animation-delay: 0.2s; }
+	.stagger-in.visible > *:nth-child(3) { animation-delay: 0.3s; }
+</style>
+
+<script>
+	const observer = new IntersectionObserver((entries) => {
+		entries.forEach(entry => {
+			if (entry.isIntersecting) entry.target.classList.add('visible');
+		});
+	}, { threshold: 0.1 });
+	document.querySelectorAll('.stagger-in').forEach(el => observer.observe(el));
+</script>

@@ -1,0 +1,26 @@
+---
+// arquivo: src/components/Footer.astro
+---
+<section class="cta">
+	<div class="container">
+		<h2>Pronto para começar?</h2>
+		<form id="f">
+			<input type="email" placeholder="seu@email.com" required>
+			<button type="submit">Entrar na lista</button>
+		</form>
+	</div>
+</section>
+<footer>
+	<div class="container foot">
+		<div><h3>Taskflow</h3><p>Zero caos.</p></div>
+		<div class="copy">© 2025 Taskflow.</div>
+	</div>
+</footer>
+<style>
+	.cta { padding: 100px 0; background: linear-gradient(135deg, var(--color-primary), var(--color-secondary)); text-align: center; color: white; }
+	form { display: flex; max-width: 500px; margin: 32px auto; gap: 8px; }
+	input { flex: 1; padding: 16px; border-radius: 8px; border: none; }
+	button { background: var(--color-bg); color: white; border: none; padding: 0 32px; border-radius: 8px; font-weight: 700; }
+	footer { padding: 80px 0 40px; background: #050508; border-top: 1px solid var(--color-border); }
+	.foot { display: flex; justify-content: space-between; }
+</style>

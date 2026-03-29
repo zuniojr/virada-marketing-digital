@@ -1,0 +1,24 @@
+---
+// arquivo: src/components/Pricing.astro
+---
+<section class="pricing" id="pricing">
+	<div class="container stagger-in">
+		<div class="header"><h2>Planos flexíveis</h2></div>
+		<div class="grid">
+			<div class="plan"><h3>Básico</h3><div class="price">R$ 0</div><a href="#" class="btn">Começar</a></div>
+			<div class="plan popular"><h3>Pro ⭐</h3><div class="price">R$ 79</div><a href="#" class="btn">Assinar</a></div>
+			<div class="plan"><h3>Enterprise</h3><div class="price">Consulta</div><a href="#" class="btn">Falar com vendas</a></div>
+		</div>
+	</div>
+</section>
+<style>
+	.pricing { padding: var(--section-padding) 0; }
+	.header { text-align: center; margin-bottom: 64px; }
+	.grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; align-items: center; }
+	.plan { background: var(--color-bg-card); border: 1px solid var(--color-border); padding: 48px 32px; border-radius: var(--radius); text-align: center; }
+	.popular { background: var(--color-primary); transform: scale(1.05); }
+	.price { font-size: 48px; font-weight: 800; margin: 24px 0; font-family: var(--font-display); }
+	.btn { display: block; padding: 14px; border-radius: var(--radius-sm); border: 1px solid var(--color-border); text-decoration: none; color: white; }
+	.popular .btn { background: white; color: var(--color-primary); }
+	@media (max-width: 900px) { .grid { grid-template-columns: 1fr; } .popular { transform: none; } }
+</style>

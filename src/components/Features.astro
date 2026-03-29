@@ -1,0 +1,41 @@
+---
+// arquivo: src/components/Features.astro
+const features = [
+	{ t: "Kanban Inteligente", d: "Organize tarefas com IA que prioriza automaticamente o que importa.", i: "M4 4h6v6H4zm10 0h6v6h-6zM4 14h6v6H4zm10 0h6v6h-6z" },
+	{ t: "Linha do Tempo", d: "Visualize dependências e gargalos antes que virem problemas.", i: "M3 12h18M3 6h18M3 18h18" },
+	{ t: "Automações No-Code", d: "Crie fluxos de trabalho sem escrever uma linha de código.", i: "M13 2L3 14h9l-1 8 10-12h-9l1-8z" },
+	{ t: "Relatórios IA", d: "Dashboards que entregam insights acionáveis na hora.", i: "M3 3v18h18M7 16l4-4 4 4 5-8" },
+	{ t: "Integrações", d: "Conecte Slack, GitHub, Figma e mais de 50 ferramentas.", i: "M9 12l2 2 4-4m6 2a9 9 0 11-18 0" },
+	{ t: "Mobile First", d: "Aplicativo nativo para iOS e Android com modo offline.", i: "M12 18h.01M8 21h8a2 2 0 002-2V5" }
+];
+---
+
+<section class="features">
+	<div class="container stagger-in">
+		<div class="header">
+			<h2>Performance e Clareza</h2>
+			<p>Tudo o que você precisa para gerir com perfeição.</p>
+		</div>
+		<div class="grid">
+			{features.map(f => (
+				<div class="card">
+					<div class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d={f.i} stroke-linecap="round"/></svg></div>
+					<h3>{f.t}</h3>
+					<p>{f.d}</p>
+				</div>
+			))}
+		</div>
+	</div>
+</section>
+
+<style>
+	.features { padding: var(--section-padding) 0; background: rgba(255,255,255,0.01); }
+	.header { text-align: center; margin-bottom: 64px; }
+	h2 { font-size: clamp(32px, 5vw, 48px); margin-bottom: 16px; }
+	.grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+	.card { background: var(--color-bg-card); border: 1px solid var(--color-border); padding: 40px; border-radius: var(--radius); backdrop-filter: blur(8px); transition: 0.4s; }
+	.card:hover { transform: translateY(-4px); border-color: var(--color-primary); box-shadow: 0 10px 40px rgba(124,58,237,0.1); }
+	.icon { width: 48px; height: 48px; background: rgba(124,58,237,0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: var(--color-primary); margin-bottom: 24px; }
+	@media (max-width: 1024px) { .grid { grid-template-columns: repeat(2, 1fr); } }
+	@media (max-width: 768px) { .grid { grid-template-columns: 1fr; } }
+</style>
