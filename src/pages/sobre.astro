@@ -1,0 +1,57 @@
+---
+// arquivo: src/pages/sobre.astro
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import About from '../components/About.astro';
+import Team from '../components/Team.astro';
+import Testimonials from '../components/Testimonials.astro';
+import ContactCTA from '../components/ContactCTA.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Sobre a Agência | Virada Marketing Digital" description="Conheça a agência premium de Itajaí que transforma negócios através de design e tecnologia.">
+	<Header />
+	
+	<main>
+		<!-- Hero Secundário: Sobre Nós -->
+		<section class="page-hero">
+			<div class="container text-center stagger-in">
+				<div class="badge mx-auto"><span class="asterisk text-primary">*</span> NOSSA HISTÓRIA</div>
+				<h1>SOMOS A <span class="text-primary">VIRADA.</span></h1>
+				<p class="subtitle mx-auto">Criativos, táticos e brutais em na busca de performance. Não seguimos padrões, nós os redefinimos para o seu negócio.</p>
+			</div>
+		</section>
+
+		<!-- Reutilizando o Metódo da Empresa (We Work Smart) -->
+		<div class="section-divider gap-top">
+			<About />
+		</div>
+
+		<!-- Reutilizando Apresentação do Time -->
+		<Team />
+
+		<!-- Reutilizando Provas Sociais -->
+		<Testimonials />
+
+		<!-- Fechamento Clássico -->
+		<ContactCTA />
+	</main>
+
+	<Footer />
+</Layout>
+
+<style>
+	.page-hero {
+		padding: 120px 0 80px;
+		background: #111111; /* Hero invertido (dark mode) para muito impacto visual */
+		color: var(--color-bg); 
+		border-bottom: 5px solid var(--color-primary);
+	}
+	.mx-auto { margin-left: auto; margin-right: auto; }
+	.badge { font-family: var(--font-heading); font-size: 14px; letter-spacing: 2px; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 24px; color: var(--color-bg); }
+	.badge .asterisk { font-size: 24px; line-height: 0; margin-right: 8px; margin-top: 6px; }
+	h1 { font-family: var(--font-display); font-size: clamp(60px, 10vw, 120px); line-height: 0.9; margin-bottom: 32px; letter-spacing: -2px; color: white; }
+	.subtitle { max-width: 600px; font-size: 20px; color: #a1a1a1; }
+	
+	.gap-top { margin-top: 60px; }
+</style>

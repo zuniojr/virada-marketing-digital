@@ -1,0 +1,80 @@
+---
+// arquivo: src/pages/portfolio.astro
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import ContactCTA from '../components/ContactCTA.astro';
+
+// Usado para replicar mais itens localmente
+const projetos = [
+	{ nome: "Branding Tech", img: "https://images.unsplash.com/photo-1600132806370-bf17e65e942f?auto=format&fit=crop&q=80&w=600" },
+	{ nome: "App Analytics", img: "https://images.unsplash.com/photo-1618761714954-0b8cd0026356?auto=format&fit=crop&q=80&w=600" },
+	{ nome: "E-Commerce", img: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=600" },
+	{ nome: "Landing Page Cripto", img: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=600" },
+	{ nome: "Portal Imobiliário", img: "https://images.unsplash.com/photo-1600132806370-bf17e65e942f?auto=format&fit=crop&q=80&w=600" },
+	{ nome: "Clinica Odonto", img: "https://images.unsplash.com/photo-1618761714954-0b8cd0026356?auto=format&fit=crop&q=80&w=600" },
+];
+---
+
+<Layout title="Portfólio | Virada Marketing Digital" description="Galeria de projetos e resultados gerados pela Virada.">
+	<Header />
+	
+	<main>
+		<!-- Hero Secundário -->
+		<section class="portfolio-hero">
+			<div class="container text-center stagger-in">
+				<div class="badge mx-auto"><span class="asterisk text-primary">*</span> NOSSO TRABALHO</div>
+				<h1><span class="text-outline">CASES E</span> <span class="text-primary">RESULTADOS.</span></h1>
+				<p class="subtitle mx-auto">Confira os projetos onde aplicamos nossa essência de design brutalista e performance técnica.</p>
+			</div>
+		</section>
+
+		<!-- Grade Maior de Projetos -->
+		<section class="portfolio-grid-section">
+			<div class="container stagger-in">
+				<div class="grid">
+					{projetos.map(p => (
+						<div class="portfolio-item card-hover">
+							<img src={p.img} alt={p.nome} loading="lazy" />
+							<div class="overlay">
+								<h3>{p.nome}</h3>
+							</div>
+						</div>
+					))}
+				</div>
+			</div>
+		</section>
+
+		<ContactCTA />
+	</main>
+
+	<Footer />
+</Layout>
+
+<style>
+	.portfolio-hero { padding: 120px 0 24px; border-bottom: 1px solid var(--color-border); }
+	.mx-auto { margin-left: auto; margin-right: auto; }
+	.badge { font-family: var(--font-heading); font-size: 14px; letter-spacing: 2px; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 24px; }
+	.badge .asterisk { font-size: 24px; line-height: 0; margin-right: 8px; margin-top: 6px; }
+	h1 { font-family: var(--font-display); font-size: clamp(60px, 10vw, 120px); line-height: 0.9; margin-bottom: 32px; letter-spacing: -2px; }
+	.subtitle { max-width: 600px; font-size: 20px; color: var(--color-text-muted); }
+
+	.portfolio-grid-section { padding: 80px 0; }
+	.grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+	.portfolio-item { position: relative; overflow: hidden; border-radius: 8px; aspect-ratio: 1/1; cursor: pointer; }
+	.portfolio-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
+	.overlay { position: absolute; inset: 0; background: rgba(26, 26, 26, 0.4); display: flex; align-items: flex-end; padding: 32px; opacity: 0; transition: opacity 0.3s ease; }
+	
+	.card-hover:hover img { transform: scale(1.05); filter: contrast(110%); }
+	.card-hover:hover .overlay { opacity: 1; }
+	.overlay h3 { color: white; margin: 0; transform: translateY(20px); transition: transform 0.4s ease; font-size: 24px; font-family: var(--font-heading); color: var(--color-bg); }
+	.card-hover:hover .overlay h3 { transform: translateY(0); color: white; }
+
+	@media (max-width: 900px) {
+		.grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+	}
+	@media (max-width: 600px) {
+		.grid { grid-template-columns: 1fr; }
+		.portfolio-item { aspect-ratio: 4/3; }
+	}
+</style>

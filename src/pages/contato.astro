@@ -1,0 +1,25 @@
+---
+// arquivo: src/pages/contato.astro
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import ContactCTA from '../components/ContactCTA.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Contato | Virada Marketing Digital" description="Fale conosco e alavanque seus negócios em Itajaí.">
+	<Header />
+	
+	<main class="contact-page-wrapper">
+		<ContactCTA />
+	</main>
+
+	<Footer />
+</Layout>
+
+<style>
+	/* Um leve reset para remover padding-top do ContactCTA quando ele for o topo direto da página se precisarmos */
+	.contact-page-wrapper {
+		/* Minimalist e direto. O componente ContactCTA fará o resto. */
+		padding-top: 40px; 
+	}
+</style>
