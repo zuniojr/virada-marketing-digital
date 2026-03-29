@@ -1,0 +1,118 @@
+---
+// arquivo: src/pages/blog.astro
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import ContactCTA from '../components/ContactCTA.astro';
+import Footer from '../components/Footer.astro';
+
+const posts = [
+	{
+		title: "Como escalar seu negócio local com tráfego pago",
+		excerpt: "Descubra as estratégias de anúncios que estão trazendo resultados reais para empresas em Itajaí.",
+		date: "28 de Março, 2026",
+		image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800"
+	},
+	{
+		title: "Design de alta conversão: O segredo dos sites que vendem",
+		excerpt: "Não é apenas sobre ser bonito. Entenda a psicologia por trás de um layout focado em vendas.",
+		date: "25 de Março, 2026",
+		image: "https://images.unsplash.com/photo-1522542550221-31fd19575a2d?auto=format&fit=crop&q=80&w=800"
+	},
+	{
+		title: "O que esperar do marketing digital em 2026",
+		excerpt: "Tendências, IA e as novas formas de capturar a atenção do seu cliente no mercado atual.",
+		date: "20 de Março, 2026",
+		image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800"
+	}
+];
+---
+
+<Layout title="Blog | Virada Marketing Digital" description="Dicas, insights e novidades sobre marketing digital e tecnologia.">
+	<Header />
+	
+	<main>
+		<section class="page-hero">
+			<div class="container text-center stagger-in">
+				<div class="badge mx-auto"><span class="asterisk text-primary">*</span> INSIGHTS</div>
+				<h1>NOSSO <span class="text-primary">BLOG.</span></h1>
+				<p class="subtitle mx-auto">Dicas táticas e pensamentos sobre como dominar o mercado digital através de tecnologia e design.</p>
+			</div>
+		</section>
+
+		<section class="blog-grid-section">
+			<div class="container stagger-in">
+				<div class="blog-grid">
+					{posts.map(post => (
+						<article class="blog-card">
+							<div class="card-image">
+								<img src={post.image} alt={post.title} loading="lazy" />
+							</div>
+							<div class="card-content">
+								<span class="date">{post.date}</span>
+								<h3>{post.title}</h3>
+								<p>{post.excerpt}</p>
+								<a href="#" class="read-more">Ler mais <span class="arrow">→</span></a>
+							</div>
+						</article>
+					))}
+				</div>
+			</div>
+		</section>
+
+		<ContactCTA />
+	</main>
+
+	<Footer />
+</Layout>
+
+<style>
+	.page-hero { padding: 80px 0 60px; border-bottom: 1px solid var(--color-border); }
+	.mx-auto { margin-left: auto; margin-right: auto; }
+	.badge { font-family: var(--font-heading); font-size: 14px; letter-spacing: 2px; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 24px; }
+	.badge .asterisk { font-size: 24px; line-height: 0; margin-right: 8px; margin-top: 6px; }
+	h1 { font-family: var(--font-display); font-size: clamp(60px, 10vw, 100px); line-height: 0.9; margin-bottom: 32px; letter-spacing: -2px; }
+	.subtitle { max-width: 600px; font-size: 20px; color: var(--color-text-muted); }
+
+	.blog-grid-section { padding: 80px 0; }
+	.blog-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
+	
+	.blog-card {
+		background: white;
+		border: 1px solid var(--color-border);
+		border-radius: 4px;
+		overflow: hidden;
+		transition: transform 0.3s ease, border-color 0.3s ease;
+	}
+	.blog-card:hover { transform: translateY(-8px); border-color: var(--color-primary); }
+	
+	.card-image { width: 100%; aspect-ratio: 16/9; overflow: hidden; }
+	.card-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+	.blog-card:hover .card-image img { transform: scale(1.05); }
+	
+	.card-content { padding: 32px; }
+	.date { font-family: var(--font-heading); font-size: 14px; color: var(--color-text-muted); display: block; margin-bottom: 16px; text-transform: uppercase; }
+	.card-content h3 { font-size: 24px; margin-bottom: 16px; line-height: 1.2; }
+	.card-content p { color: var(--color-text-muted); font-size: 16px; margin-bottom: 24px; }
+	
+	.read-more {
+		display: inline-flex;
+		align-items: center;
+		gap: 8px;
+		font-weight: 700;
+		text-transform: uppercase;
+		font-size: 14px;
+		color: var(--color-text);
+		text-decoration: none;
+		transition: 0.2s;
+	}
+	.read-more:hover { color: var(--color-primary); }
+	.arrow { transition: transform 0.2s; }
+	.read-more:hover .arrow { transform: translateX(5px); }
+
+	@media (max-width: 900px) {
+		.blog-grid { grid-template-columns: repeat(2, 1fr); gap: 30px; }
+	}
+	@media (max-width: 600px) {
+		.blog-grid { grid-template-columns: 1fr; }
+	}
+</style>
