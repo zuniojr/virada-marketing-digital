@@ -8,6 +8,111 @@ import ContactCTA from '../../components/ContactCTA.astro';
 export async function getStaticPaths() {
 	const posts = [
 		{
+			slug: "restaurante-osvaldo-navegantes-gastronomia",
+			title: "Restaurante Osvaldo: Tradição e Sabor na Meia Praia em Navegantes",
+			date: "31 de Março, 2026",
+			image: "https://turismo.navegantes.sc.gov.br/wp-content/uploads/2026/03/OSVALDO.png",
+			content: `
+				<p>Se você procura o verdadeiro sabor do litoral em Navegantes, o <strong>Restaurante Osvaldo</strong> é uma parada obrigatória. Localizado no bairro Meia Praia, o estabelecimento é um ícone da gastronomia local, servindo petiscos e pratos que conquistam moradores e turistas há anos.</p>
+				
+				<h2>Gastronomia Litorânea de Excelência</h2>
+				<p>O foco aqui é o frescor. Com uma localização privilegiada, o Restaurante Osvaldo se destaca pela qualidade dos seus frutos do mar. Para o empreendedor de Navegantes, este é um exemplo clássico de como a qualidade de produto e o atendimento tradicional constroem uma marca duradoura.</p>
+				
+				<h3>Informações úteis:</h3>
+				<ul>
+					<li><strong>Endereço:</strong> Rua Ernesto Müller, 324 – Sala 1 – Meia Praia, Navegantes – SC</li>
+					<li><strong>Telefone:</strong> (47) 99164-3400</li>
+					<li><strong>Especialidade:</strong> Petiscos de frutos do mar e pratos típicos.</li>
+				</ul>
+				<p>Dica da Virada: O Restaurante Osvaldo é perfeito para um almoço de negócios descontraído ou um jantar em família apreciando a brisa de Navegantes.</p>
+				<p class="text-muted" style="font-size: 14px; margin-top: 40px;"><em>Crédito da imagem: turismo.navegantes.sc.gov.br</em></p>
+			`
+		},
+		{
+			slug: "dazumbanho-na-cozinha-navegantes-afetiva",
+			title: "Dazumbanho na Cozinha: Gastronomia Afetiva no Gravatá",
+			date: "30 de Março, 2026",
+			image: "https://turismo.navegantes.sc.gov.br/wp-content/uploads/2026/03/dazumbanho.jpg",
+			content: `
+				<p>O <strong>Dazumbanho na Cozinha</strong> traz para o Gravatá o conceito de "gastronomia afetiva". São pratos que lembram o tempero de casa, feitos com carinho e servidos em porções fartas que celebram a cultura catarinense.</p>
+				
+				<h2>Experiência Acolhedora em Navegantes</h2>
+				<p>Para quem busca um ambiente que faz você se sentir parte da família, o Dazumbanho é o lugar certo. Em um mundo cada vez mais digital, negócios que focam no "H2H" (Human to Human) como este ganham uma vantagem competitiva enorme pela fidelização do cliente.</p>
+				
+				<h3>Onde encontrar:</h3>
+				<ul>
+					<li><strong>Endereço:</strong> Av. Prefeito José Juvenal Mafra, 815 – Gravatá, Navegantes – SC</li>
+					<li><strong>Telefone:</strong> (47) 9932-4454</li>
+					<li><strong>Destaque:</strong> Atendimento personalizado e pratos regionais.</li>
+				</ul>
+				<p>Aproveite uma visita ao Gravatá para saborear o que há de mais autêntico na cozinha de Navegantes.</p>
+				<p class="text-muted" style="font-size: 14px; margin-top: 40px;"><em>Crédito da imagem: turismo.navegantes.sc.gov.br</em></p>
+			`
+		},
+		{
+			slug: "takuan-sushi-navegantes-japonesa",
+			title: "Takúan Sushi: A Melhor Culinária Japonesa de Navegantes",
+			date: "29 de Março, 2026",
+			image: "https://turismo.navegantes.sc.gov.br/wp-content/uploads/2026/03/takuan.jpg",
+			content: `
+				<p>A união entre a tradição milenar japonesa e os ingredientes frescos de Navegantes resultou no <strong>Takúan Sushi</strong>. Referência no bairro Gravatá, o restaurante atrai quem busca precisão técnica e sabores equilibrados.</p>
+				
+				<h2>Sofisticação e Sabor no Litoral</h2>
+				<p>O Takúan mostra como o design e a apresentação (no prato e no ambiente) são fundamentais para agregar valor a um serviço. Na Virada, aplicamos essa mesma lógica visual para que os sites de nossos clientes transmitam essa mesma sofisticação imediata.</p>
+				
+				<h3>Detalhes do local:</h3>
+				<ul>
+					<li><strong>Endereço:</strong> Av. Prefeito José Juvenal Mafra, 5845 – Gravatá, Navegantes – SC</li>
+					<li><strong>Telefone:</strong> (47) 98925-2430</li>
+					<li><strong>Ambiente:</strong> Moderno, climatizado e perfeito para encontros.</li>
+				</ul>
+				<p>Explore a fusão perfeita de sabores orientais bem aqui, de frente para o mar de Navegantes.</p>
+				<p class="text-muted" style="font-size: 14px; margin-top: 40px;"><em>Crédito da imagem: turismo.navegantes.sc.gov.br</em></p>
+			`
+		},
+		{
+			slug: "churrascaria-navegantes-volta-grande",
+			title: "Churrascaria Navegantes: O Ponto de Parada Obrigatório na BR-470",
+			date: "28 de Março, 2026",
+			image: "https://turismo.navegantes.sc.gov.br/wp-content/uploads/2026/03/res.jpg",
+			content: `
+				<p>Quem viaja pela BR-470 em direção ao interior ou litoral já conhece a silhueta da <strong>Churrascaria Navegantes</strong> na Volta Grande. É um porto seguro para quem busca o clássico churrasco gaúcho com buffet completo.</p>
+				
+				<h2>Tradição que Atravessa Gerações</h2>
+				<p>O sucesso da Churrascaria Navegantes reside na consistência. Eles dominam o SEO geográfico natural: todo caminhoneiro e viajante sabe onde fica o KM 6,5. Digitalmente, ajudamos negócios como este a serem encontrados por quem está planejando a rota via Google Maps.</p>
+				
+				<h3>Informações de Visita:</h3>
+				<ul>
+					<li><strong>Endereço:</strong> BR-470, 5555 – Km 6,5 – Volta Grande, Navegantes – SC</li>
+					<li><strong>Telefone:</strong> (47) 3390-0101</li>
+					<li><strong>Facilidades:</strong> Estacionamento amplo para todos os portes de veículos.</li>
+				</ul>
+				<p>Uma experiência gastronômica farta e honesta que representa a força do setor de serviços de Navegantes.</p>
+				<p class="text-muted" style="font-size: 14px; margin-top: 40px;"><em>Crédito da imagem: turismo.navegantes.sc.gov.br</em></p>
+			`
+		},
+		{
+			slug: "bierheaven-cervejaria-navegantes-pub",
+			title: "Bierheaven Cervejaria: Cerveja Artesanal e Networking no Centro",
+			date: "27 de Março, 2026",
+			image: "https://turismo.navegantes.sc.gov.br/wp-content/uploads/2026/03/por.png",
+			content: `
+				<p>A <strong>Bierheaven Cervejaria</strong> é o paraíso para os amantes de lúpulo em Navegantes. Localizada estrategicamente no bairro São Domingos, ela une a fabricação própria de cervejas artesanais a um ambiente de pub vibrante.</p>
+				
+				<h2>Cultura Cervejeira e Inovação em SC</h2>
+				<p>Mais do que um bar, a Bierheaven é um centro cultural local. No marketing moderno, criar uma "tribo" ao redor do seu produto, como a Bierheaven faz com seus clientes fiéis, é o segredo para o sucesso orgânico e sustentável.</p>
+				
+				<h3>Happy Hour em Navegantes:</h3>
+				<ul>
+					<li><strong>Endereço:</strong> Rua Joinville, 110 – São Domingos, Navegantes – SC</li>
+					<li><strong>Telefone:</strong> (47) 99244-9993</li>
+					<li><strong>Diferencial:</strong> Brewpub com visão direta para a produção.</li>
+				</ul>
+				<p>Venha degustar o céu em forma de cerveja artesanal no coração de Navegantes.</p>
+				<p class="text-muted" style="font-size: 14px; margin-top: 40px;"><em>Crédito da imagem: turismo.navegantes.sc.gov.br</em></p>
+			`
+		},
+		{
 			slug: "casa-da-cultura-dide-brandao-itajai",
 			title: "Casa da Cultura Dide Brandão: O coração artístico de Itajaí",
 			date: "30 de Março, 2026",
