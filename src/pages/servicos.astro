@@ -1,0 +1,158 @@
+---
+// arquivo: src/pages/servicos.astro
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import ContactCTA from '../components/ContactCTA.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Nossos Serviços | Virada Marketing Digital" description="Criação de sites de alta conversão, lançamentos digitais e gestão de tráfego pago em Itajaí.">
+	<Header />
+	
+	<main>
+		<!-- Hero Secundário -->
+		<section class="services-hero">
+			<div class="container text-center stagger-in">
+				<div class="badge mx-auto"><span class="asterisk text-primary">*</span> EXPERTISE</div>
+				<h1>O QUE NÓS <span class="text-primary">FAZEMOS.</span></h1>
+				<p class="subtitle mx-auto">Estratégias implacáveis e desenvolvimento premium para colocar seu negócio no topo do mercado digital.</p>
+			</div>
+		</section>
+
+		<!-- Carro-Chefe: Criação de Sites -->
+		<section class="highlight-service">
+			<div class="container stagger-in">
+				<div class="highlight-box">
+					<div class="highlight-content">
+						<div class="tag">NOSSO CARRO CHEFE</div>
+						<h2>Criação de <span class="text-primary">Sites de Baixa Fricção e Alta Conversão.</span></h2>
+						<p>Não entregamos apenas "um site bonitinho". Desenvolvemos verdadeiras máquinas de vendas. Seu site será extremamente rápido (usando tecnologias modernas como Astro), responsivo e 100% otimizado para o Google (SEO).</p>
+						
+						<ul class="feature-list">
+							<li><span class="icon">*</span> Design UI/UX exclusivo com interface premium (estilo Agência);</li>
+							<li><span class="icon">*</span> Otimização de Performance e Velocidade (Carregamento que beira 0 segundos);</li>
+							<li><span class="icon">*</span> Copywriting focado na jornada de compra do seu cliente para eliminar atritos;</li>
+							<li><span class="icon">*</span> Design Mobile-First (Perfeito em qualquer celular).</li>
+						</ul>
+						<a href="/#contato" class="btn btn-black mt-32">Quero um Site Assim</a>
+					</div>
+					<div class="highlight-visual">
+						<!-- Retrato/Representação visual abstracta para Sites -->
+						<div class="abstract-site">
+							<div class="browser-top"><span></span><span></span><span></span></div>
+							<div class="browser-body"><h3>CARREGANDO<br/>SUCESSO.</h3><span class="big-star text-primary">*</span></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Grid: Lançamentos Digitais & Tráfego Pago -->
+		<section class="secondary-services">
+			<div class="container">
+				<div class="services-grid stagger-in">
+					
+					<!-- Card: Lançamentos Digitais -->
+					<div class="service-card">
+						<div class="card-icon text-primary">*</div>
+						<h3>Lançamentos Digitais</h3>
+						<p>Da ideia ao carrinho aberto: orquestramos todo o processo de captura, aquecimento e vendas para o seu infoproduto ou serviço. Nossa expertise garante a maximização do ROI no seu grande dia.</p>
+						<ul class="feature-list simple-list mt-24">
+							<li>Estratégia Completa de Funil;</li>
+							<li>Criação das Páginas de Captura;</li>
+							<li>Configuração de Automações;</li>
+							<li>Suporte Tático no Dia do Carrinho.</li>
+						</ul>
+					</div>
+
+					<!-- Card: Tráfego Pago -->
+					<div class="service-card">
+						<div class="card-icon text-primary">*</div>
+						<h3>Tráfego Pago</h3>
+						<p>Colocamos a sua oferta exatamente na frente de quem já quer e pode comprar de você. Otimização clínica das campanhas para derrubar o Custo por Clique e alavancar o Retorno Sobre Investimento (ROAS).</p>
+						<ul class="feature-list simple-list mt-24">
+							<li>Campanhas Nativas de Venda (Google Search/PMax);</li>
+							<li>Gestão Avançada de Meta Ads (Insta/FB);</li>
+							<li>Remarketing Implacável;</li>
+							<li>Relatórios Claros de Performance.</li>
+						</ul>
+					</div>
+
+				</div>
+			</div>
+		</section>
+
+		<!-- Reuso do Footer Action Area -->
+		<ContactCTA />
+	</main>
+
+	<Footer />
+</Layout>
+
+<style>
+	.services-hero {
+		padding: 120px 0 80px;
+		border-bottom: 1px solid var(--color-border);
+	}
+	.mx-auto { margin-left: auto; margin-right: auto; }
+	.badge { font-family: var(--font-heading); font-size: 14px; letter-spacing: 2px; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 24px; }
+	.badge .asterisk { font-size: 24px; line-height: 0; margin-right: 8px; margin-top: 6px; }
+	h1 { font-family: var(--font-display); font-size: clamp(60px, 10vw, 120px); line-height: 0.9; margin-bottom: 32px; letter-spacing: -2px; }
+	.subtitle { max-width: 600px; font-size: 20px; color: var(--color-text-muted); }
+
+	.highlight-service { padding: 120px 0 60px; }
+	.highlight-box {
+		background: var(--color-bg); /* Ou trocar pra preto se quiser, mas creme mantém limpo */
+		border: 2px solid var(--color-text);
+		border-radius: 4px;
+		display: grid;
+		grid-template-columns: 1.2fr 1fr;
+		overflow: hidden;
+		box-shadow: 12px 12px 0 var(--color-primary); /* Sombra bruta */
+	}
+	.highlight-content { padding: 60px; }
+	.tag { font-family: var(--font-heading); font-weight: bold; background: var(--color-primary); color: white; display: inline-block; padding: 4px 12px; font-size: 14px; letter-spacing: 1px; margin-bottom: 24px; }
+	.highlight-content h2 { font-size: clamp(36px, 5vw, 64px); letter-spacing: -1px; margin-bottom: 24px; line-height: 1.1; }
+	.highlight-content p { font-size: 18px; margin-bottom: 32px; color: var(--color-text); }
+	
+	.feature-list { list-style: none; display: flex; flex-direction: column; gap: 16px; margin-bottom: 32px; }
+	.feature-list li { display: flex; align-items: flex-start; gap: 12px; font-weight: 500; }
+	.icon { font-family: var(--font-display); color: var(--color-primary); font-size: 24px; margin-top: -8px; }
+
+	.highlight-visual { background: var(--color-text); padding: 40px; display: flex; align-items: center; justify-content: center; }
+	.abstract-site {
+		width: 100%; max-width: 400px; aspect-ratio: 3/4; background: var(--color-bg);
+		border-radius: 8px; display: flex; flex-direction: column; overflow: hidden;
+	}
+	.browser-top { background: #e2dfdc; height: 32px; padding: 0 12px; display: flex; align-items: center; gap: 6px; }
+	.browser-top span { width: 10px; height: 10px; border-radius: 50%; background: #c5c1bc; }
+	.browser-body { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; position: relative; }
+	.browser-body h3 { font-size: 32px; color: var(--color-text); mix-blend-mode: multiply; position: relative; z-index: 2; }
+	.big-star { position: absolute; font-size: 200px; font-family: var(--font-display); line-height: 0; opacity: 0.2; z-index: 1; }
+
+	.secondary-services { padding: 60px 0 120px; }
+	.services-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+	.service-card {
+		padding: 48px;
+		border: 1px solid var(--color-border);
+		border-radius: 4px;
+		background: white;
+		transition: 0.3s;
+	}
+	.service-card:hover { border-color: var(--color-primary); transform: translateY(-8px); }
+	.card-icon { font-family: var(--font-display); font-size: 80px; line-height: 0.5; margin-bottom: 32px; }
+	.service-card h3 { font-size: 32px; margin-bottom: 16px; }
+	
+	.simple-list li { color: var(--color-text-muted); padding-bottom: 8px; border-bottom: 1px solid var(--color-border); }
+	.simple-list li:last-child { border-bottom: none; }
+	.mt-24 { margin-top: 24px; }
+	.mt-32 { margin-top: 32px; }
+
+	@media (max-width: 900px) {
+		.highlight-box { grid-template-columns: 1fr; box-shadow: 6px 6px 0 var(--color-primary); }
+		.highlight-content { padding: 40px 24px; }
+		.highlight-visual { padding: 40px 24px; }
+		.services-grid { grid-template-columns: 1fr; }
+		.service-card { padding: 32px 24px; }
+	}
+</style>
