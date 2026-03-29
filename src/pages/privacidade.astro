@@ -1,0 +1,56 @@
+---
+// arquivo: src/pages/privacidade.astro
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Política de Privacidade | Virada Marketing Digital" description="Nossa política de privacidade e compromisso com os seus dados (LGPD).">
+	<Header />
+	
+	<main class="legal-page">
+		<div class="container stagger-in">
+			<div class="legal-header">
+				<h1>Política de <span class="text-primary">Privacidade.</span></h1>
+				<p>Última atualização: 29 de Março de 2026</p>
+			</div>
+
+			<div class="legal-content">
+				<h3>1. Introdução</h3>
+				<p>A Virada Marketing Digital valoriza a privacidade dos seus usuários. Esta Política de Privacidade descreve como coletamos, usamos, compartilhamos e protegemos suas informações pessoais ao utilizar nosso site e serviços.</p>
+
+				<h3>2. Coleta de Informações</h3>
+				<p>Coletamos informações que você nos fornece diretamente, como nome, endereço de e-mail e número de telefone ao preencher nossos formulários de contato ou ao contratar nossos serviços.</p>
+
+				<h3>3. Uso das Informações</h3>
+				<p>Utilizamos suas informações para:</p>
+				<ul>
+					<li>Fornecer e melhorar nossos serviços (Criação de Sites, Tráfego Pago, Lançamentos);</li>
+					<li>Responder a suas dúvidas e solicitações;</li>
+					<li>Enviar comunicações sobre atualizações, ofertas e novidades, das quais você pode se descadastrar a qualquer momento.</li>
+				</ul>
+
+				<h3>4. Proteção de Dados (LGPD)</h3>
+				<p>Nos comprometemos a cumprir a Lei Geral de Proteção de Dados (LGPD) implementando medidas técnicas e organizacionais adequadas para proteger suas informações pessoais contra acesso, alteração, divulgação ou destruição não autorizados.</p>
+
+				<h3>5. Contato</h3>
+				<p>Se você tiver alguma dúvida sobre esta Política de Privacidade, entre em contato conosco através do e-mail: contato@virada.com.br.</p>
+			</div>
+		</div>
+	</main>
+
+	<Footer />
+</Layout>
+
+<style>
+	.legal-page { padding: 80px 0 120px; }
+	.legal-header { margin-bottom: 60px; border-bottom: 1px solid var(--color-border); padding-bottom: 40px; }
+	.legal-header h1 { font-size: clamp(40px, 8vw, 80px); letter-spacing: -1px; margin-bottom: 16px; font-family: var(--font-display); }
+	.legal-header p { font-family: var(--font-heading); color: var(--color-text-muted); font-size: 14px; text-transform: uppercase; letter-spacing: 1px; }
+
+	.legal-content { max-width: 800px; }
+	.legal-content h3 { font-size: 24px; margin: 40px 0 16px; color: var(--color-text); font-family: var(--font-heading); text-transform: uppercase; }
+	.legal-content p { margin-bottom: 16px; font-size: 18px; color: var(--color-text-muted); line-height: 1.6; }
+	.legal-content ul { margin-bottom: 16px; padding-left: 24px; color: var(--color-text-muted); font-size: 18px; line-height: 1.6; }
+	.legal-content ul li { margin-bottom: 8px; }
+</style>
