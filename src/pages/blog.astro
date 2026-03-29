@@ -7,20 +7,23 @@ import Footer from '../components/Footer.astro';
 
 const posts = [
 	{
-		title: "Como escalar seu negócio local com tráfego pago",
-		excerpt: "Descubra as estratégias de anúncios que estão trazendo resultados reais para empresas em Itajaí.",
+		slug: "como-escalar-seu-negocio-local-com-trafego-pago",
+		title: "Como escalar seu negócio local em Itajaí com tráfego pago",
+		excerpt: "Descubra as estratégias de anúncios que estão trazendo resultados reais para empresas em Itajaí e região.",
 		date: "28 de Março, 2026",
 		image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800"
 	},
 	{
-		title: "Design de alta conversão: O segredo dos sites que vendem",
-		excerpt: "Não é apenas sobre ser bonito. Entenda a psicologia por trás de um layout focado em vendas.",
+		slug: "design-de-alta-conversao-itajai",
+		title: "Design de alta conversão: O segredo para empresas de Itajaí venderem mais",
+		excerpt: "Não é apenas sobre estética. Entenda a psicologia do design focado em converter visitantes em clientes locais.",
 		date: "25 de Março, 2026",
 		image: "https://images.unsplash.com/photo-1522542550221-31fd19575a2d?auto=format&fit=crop&q=80&w=800"
 	},
 	{
-		title: "O que esperar do marketing digital em 2026",
-		excerpt: "Tendências, IA e as novas formas de capturar a atenção do seu cliente no mercado atual.",
+		slug: "marketing-digital-itajai-tendencias-2026",
+		title: "O futuro do Marketing Digital em Itajaí e SC: Tendências para 2026",
+		excerpt: "IA, personalização e as novas formas de capturar a atenção do cliente no litoral catarinense.",
 		date: "20 de Março, 2026",
 		image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800"
 	}
@@ -44,15 +47,17 @@ const posts = [
 				<div class="blog-grid">
 					{posts.map(post => (
 						<article class="blog-card">
-							<div class="card-image">
-								<img src={post.image} alt={post.title} loading="lazy" />
-							</div>
-							<div class="card-content">
-								<span class="date">{post.date}</span>
-								<h3>{post.title}</h3>
-								<p>{post.excerpt}</p>
-								<a href="#" class="read-more">Ler mais <span class="arrow">→</span></a>
-							</div>
+							<a href={`/blog/${post.slug}`} class="card-link">
+								<div class="card-image">
+									<img src={post.image} alt={post.title} loading="lazy" />
+								</div>
+								<div class="card-content">
+									<span class="date">{post.date}</span>
+									<h3>{post.title}</h3>
+									<p>{post.excerpt}</p>
+									<span class="read-more">Ler mais <span class="arrow">→</span></span>
+								</div>
+							</a>
 						</article>
 					))}
 				</div>
@@ -84,6 +89,12 @@ const posts = [
 		transition: transform 0.3s ease, border-color 0.3s ease;
 	}
 	.blog-card:hover { transform: translateY(-8px); border-color: var(--color-primary); }
+	
+	.card-link {
+		text-decoration: none;
+		color: inherit;
+		display: block;
+	}
 	
 	.card-image { width: 100%; aspect-ratio: 16/9; overflow: hidden; }
 	.card-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }

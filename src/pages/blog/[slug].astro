@@ -1,0 +1,137 @@
+---
+// arquivo: src/pages/blog/[slug].astro
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import ContactCTA from '../../components/ContactCTA.astro';
+
+export async function getStaticPaths() {
+	const posts = [
+		{
+			slug: "como-escalar-seu-negocio-local-com-trafego-pago",
+			title: "Como escalar seu negócio local em Itajaí com tráfego pago",
+			date: "28 de Março, 2026",
+			image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1200",
+			content: `
+				<p>Se você tem uma empresa em Itajaí ou região, sabe que a concorrência no digital está cada vez mais acirrada. Mas como se destacar entre tantos outros negócios locais? A resposta curta é: <strong>Tráfego Pago focado em conversão.</strong></p>
+				
+				<h2>Por que investir em Tráfego Pago em Itajaí?</h2>
+				<p>Diferente do marketing tradicional, os anúncios online (Meta Ads e Google Ads) permitem que você fale exatamente com quem está procurando pelo seu serviço agora. Se alguém em Itajaí pesquisa por "melhor agência de marketing" ou "restaurante no centro", seu negócio precisa aparecer.</p>
+				
+				<h3>Estratégias que funcionam:</h3>
+				<ul>
+					<li><strong>Raio de Localização:</strong> Anunciar apenas para quem está a poucos quilômetros do seu estabelecimento físico.</li>
+					<li><strong>Remarketing Local:</strong> Reimpactar pessoas de Itajaí que visitaram seu site mas não entraram em contato.</li>
+					<li><strong>Google Meu Negócio:</strong> Integrar seus anúncios com seu perfil no Maps para facilitar visitas físicas.</li>
+				</ul>
+
+				<p>Na Virada Marketing Digital, não apenas "apertamos botões". Criamos estratégias táticas para que cada real investido se transforme em oportunidades reais de venda para sua empresa em Santa Catarina.</p>
+			`
+		},
+		{
+			slug: "design-de-alta-conversao-itajai",
+			title: "Design de alta conversão: O segredo para empresas de Itajaí venderem mais",
+			date: "25 de Março, 2026",
+			image: "https://images.unsplash.com/photo-1522542550221-31fd19575a2d?auto=format&fit=crop&q=80&w=1200",
+			content: `
+				<p>Ter um site bonito é bom, mas ter um site que <strong>vende</strong> é fundamental. Muitas empresas locais em Itajaí perdem clientes simplesmente porque seus sites são confusos ou lentos.</p>
+				
+				<h2>O que é Design de Baixa Fricção?</h2>
+				<p>Fricção é qualquer obstáculo entre o seu cliente e a compra. Se o seu site demora para carregar no celular de alguém que está caminhando pela Avenida Beira Rio, você perdeu uma venda. Nosso design foca em eliminar esses obstáculos.</p>
+				
+				<h3>Pilares do nosso design premium:</h3>
+				<ul>
+					<li><strong>Velocidade Brutal:</strong> Sites feitos em Astro carregam quase instantaneamente.</li>
+					<li><strong>Hierarquia Visual:</strong> Guiar o olho do cliente direto para o botão de WhatsApp.</li>
+					<li><strong>Identidade Local:</strong> Falar a língua do seu público em Itajaí e região.</li>
+				</ul>
+
+				<p>Transformamos a presença digital de negócios em Itajaí com interfaces que capturam a atenção e não a soltam até que a conversão aconteça.</p>
+			`
+		},
+		{
+			slug: "marketing-digital-itajai-tendencias-2026",
+			title: "O futuro do Marketing Digital em Itajaí e SC: Tendências para 2026",
+			date: "20 de Março, 2026",
+			image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200",
+			content: `
+				<p>O mercado digital em 2026 não é mais o mesmo de dois anos atrás. Em Itajaí, o crescimento econômico trouxe também uma exigência maior dos consumidores por transparência e personalização.</p>
+				
+				<h2>IA e Personalização Local</h2>
+				<p>A Inteligência Artificial agora permite que pequenas empresas de Itajaí ofereçam um atendimento digno de multinacional. Chatbots inteligentes e scripts de vendas personalizados estão ditando o jogo.</p>
+				
+				<h3>O que focar agora:</h3>
+				<ul>
+					<li><strong>SEO Local de Alta Performance:</strong> Dominar as buscas em Itajaí e Balneário Camboriú.</li>
+					<li><strong>Conteúdo Autêntico:</strong> Menos robótico, mais humano e conectado com o litoral catarinense.</li>
+					<li><strong>Gestão de Reputação:</strong> Reviews e feedbacks locais são o novo ouro digital.</li>
+				</ul>
+
+				<p>A Virada está na vanguarda dessas tecnologias, garantindo que nossos clientes em SC nunca fiquem para trás.</p>
+			`
+		}
+	];
+
+	return posts.map(post => ({
+		params: { slug: post.slug },
+		props: { post },
+	}));
+}
+
+const { post } = Astro.props;
+---
+
+<Layout title={`${post.title} | Blog Virada Marketing Digital`} description={post.title}>
+	<Header />
+	
+	<main>
+		<article class="post-detail">
+			<section class="post-hero">
+				<div class="container stagger-in">
+					<a href="/blog" class="back-link">← Voltar ao Blog</a>
+					<div class="badge mt-24"><span class="asterisk text-primary">*</span> {post.date}</div>
+					<h1>{post.title}</h1>
+				</div>
+			</section>
+
+			<section class="post-content-area">
+				<div class="container stagger-in">
+					<div class="featured-image">
+						<img src={post.image} alt={post.title} />
+					</div>
+					<div class="content w-800 mx-auto" set:html={post.content}>
+					</div>
+				</div>
+			</section>
+		</article>
+
+		<ContactCTA />
+	</main>
+
+	<Footer />
+</Layout>
+
+<style>
+	.post-detail { padding-bottom: 80px; }
+	.post-hero { padding: 80px 0 40px; background: #fffcf9; border-bottom: 1px solid var(--color-border); }
+	.back-link { text-decoration: none; color: var(--color-text-muted); font-weight: 600; text-transform: uppercase; font-size: 14px; transition: 0.2s; }
+	.back-link:hover { color: var(--color-primary); }
+	.mt-24 { margin-top: 24px; }
+	
+	h1 { font-family: var(--font-display); font-size: clamp(32px, 5vw, 64px); line-height: 1.1; margin-top: 16px; letter-spacing: -1px; }
+
+	.post-content-area { padding: 60px 0; }
+	.featured-image { width: 100%; aspect-ratio: 21/9; border-radius: 12px; overflow: hidden; margin-bottom: 60px; border: 1px solid var(--color-border); }
+	.featured-image img { width: 100%; height: 100%; object-fit: cover; }
+	
+	.w-800 { max-width: 800px; }
+	.mx-auto { margin-left: auto; margin-right: auto; }
+	
+	.content { font-size: 18px; line-height: 1.8; color: var(--color-text); }
+	.content :global(h2) { font-family: var(--font-heading); font-size: 32px; margin: 40px 0 20px; text-transform: uppercase; }
+	.content :global(h3) { font-family: var(--font-heading); font-size: 24px; margin: 30px 0 15px; }
+	.content :global(p) { margin-bottom: 24px; }
+	.content :global(ul) { margin-bottom: 24px; padding-left: 20px; }
+	.content :global(li) { margin-bottom: 12px; }
+	.content :global(strong) { color: var(--color-text); }
+</style>
