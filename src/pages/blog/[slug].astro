@@ -8,6 +8,133 @@ import ContactCTA from '../../components/ContactCTA.astro';
 export async function getStaticPaths() {
 	const posts = [
 		{
+			slug: "o-que-fazer-em-itajai-guia-lugares-imperdiveis",
+			title: "O que fazer em Itajaí: 7 lugares imperdíveis (Guia 2026)",
+			date: "29 de Março, 2026",
+			image: "https://images.unsplash.com/photo-1590523277543-a94d2e4eb00b?auto=format&fit=crop&q=80&w=1200",
+			content: `
+				<p>Itajaí é muito mais do que um polo portuário e econômico. A cidade em 2026 consolidou-se como um destino turístico e de estilo de vida vibrante em Santa Catarina. Se você está visitando ou mora aqui e quer redescobrir a cidade, este guia é para você.</p>
+				
+				<h2>1. Molhe da Barra</h2>
+				<p>O local ideal para ver os gigantes do mar entrando e saindo do porto, além de apreciar um pôr do sol inesquecível. É um dos pontos mais tradicionais para caminhadas e pesca.</p>
+				
+				<h2>2. Matriz do Santíssimo Sacramento</h2>
+				<p>Uma obra-prima da arquitetura gótica no centro de Itajaí. Suas torres e vitrais encantam moradores e visitantes, contando parte da rica história local.</p>
+
+				<h2>3. Mercado Público de Itajaí</h2>
+				<p>Onde a culinária peixeira encontra a boa música e o artesanato regional. Um lugar para sentidos e histórias compartilhadas no coração da cidade.</p>
+
+				<h3>Outros locais indispensáveis:</h3>
+				<ul>
+					<li><strong>Praia do Atalaia:</strong> Famosa pelo surfe noturno e ondas de classe mundial.</li>
+					<li><strong>Museu Histórico:</strong> No antigo Palácio Marcos Konder, uma viagem definitiva ao passado de Itajaí.</li>
+					<li><strong>Bico do Papagaio:</strong> Uma formação rochosa icônica e cartão-postal da cidade.</li>
+					<li><strong>Eco do Rio Itajaí-Açu:</strong> Passeios de barco que revelam a cidade por uma perspectiva única.</li>
+				</ul>
+				<p>Itajaí continua surpreendendo. Explore e viva o que o litoral catarinense tem de melhor.</p>
+			`
+		},
+		{
+			slug: "praia-brava-itajai-hotspot-negocios-lazer",
+			title: "Praia Brava: O hotspot de Itajaí que une bons negócios e alto padrão",
+			date: "27 de Março, 2026",
+			image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&q=80&w=1200",
+			content: `
+				<p>A Praia Brava em Itajaí não é apenas uma praia — é um conceito. Hoje, o bairro é o epicentro de desenvolvimento e sofisticação no litoral norte de Santa Catarina, atraindo olhares de todo o país.</p>
+				
+				<h2>Ambiente de Business e Lifestyle</h2>
+				<p>Muitas mentes criativas e empreendedores escolheram a Brava como base. Com seus beach clubs de renome mundial, centros gastronômicos e novos prédios corporativos de alto padrão, é aqui que o networking acontece de pés na areia.</p>
+				
+				<h3>Por que a Brava é especial:</h3>
+				<ul>
+					<li><strong>Infraestrutura Premium:</strong> Segurança, lazer e serviços exclusivos ao redor dos melhores condomínios.</li>
+					<li><strong>Culinária Internacional:</strong> Restaurantes que trazem temperos de todo o mundo para o litoral catarinense.</li>
+					<li><strong>Onda da Valorização:</strong> Um dos metros quadrados mais rentáveis do país nos últimos anos.</li>
+				</ul>
+				<p>Seja para investir, morar ou apenas aproveitar um sábado de sol, a Praia Brava em Itajaí é o lugar onde o futuro se manifesta com estilo.</p>
+			`
+		},
+		{
+			slug: "mercado-publico-itajai-gastronomia-networking",
+			title: "Mercado Público de Itajaí: Onde a tradição encontra o networking",
+			date: "24 de Março, 2026",
+			image: "https://images.unsplash.com/photo-1555392816-4aa00c5bc5d0?auto=format&fit=crop&q=80&w=1200",
+			content: `
+				<p>Se existe um lugar onde a alma de Itajaí pulsa de verdade, esse lugar é o Mercado Público. Localizado no centro histórico, ele é muito mais que um centro comercial; é o ponto focal da identidade peixeira.</p>
+
+				<h2>Sabores do Mar e Música Boa</h2>
+				<p>Um chopp gelado, um bolinho de bacalhau e o som do samba ou da música popular brasileira. O Mercado convida você a desacelerar e aproveitar o momento, cercado por arquitetura e história.</p>
+
+				<h3>Como aproveitar o Mercado:</h3>
+				<ul>
+					<li><strong>Almoço Peixeiro:</strong> Experimente pratos com ingredientes frescos recém-chegados do Porto de Itajaí.</li>
+					<li><strong>Artesanato Local:</strong> Encontre presentes únicos feitos por artistas da nossa região.</li>
+					<li><strong>Relacionamentos Reais:</strong> Perfeito para encontrar parceiros de negócios em um ambiente descontraído.</li>
+				</ul>
+				<p>O Mercado Público de Itajaí é onde a história local é escrita e vivida todos os dias entre sorrisos e bons pratos.</p>
+			`
+		},
+		{
+			slug: "morro-do-morcego-itajai-aventura-vista-panoramica",
+			title: "Morro do Morcego: A trilha escondida com a melhor vista de Itajaí",
+			date: "21 de Março, 2026",
+			image: "https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&q=80&w=1200",
+			content: `
+				<p>Itajaí esconde segredos naturais que poucas pessoas exploram de verdade. O Morro do Morcego é uma dessas joias raras, oferecendo uma trilha curta mas que entrega uma vista panorâmica de tirar o fôlego da Praia Brava e Balneário Camboriú.</p>
+
+				<h2>Conexão Total com a Mata Atlântica</h2>
+				<p>A trilha é um convite para quem busca desintoxicar do digital. Caminhar sob a sombra das árvores nativas e ouvir o som das ondas beijando a rocha lá embaixo é uma terapia gratuita no meio da rotina agitada em Itajaí.</p>
+
+				<h3>Dicas para sua Trilha:</h3>
+				<ul>
+					<li><strong>Melhor Horário:</strong> Vá bem cedo no nascer do sol para fotos cinematográficas.</li>
+					<li><strong>Equipamento:</strong> Tênis confortável de trilha é essencial para os trechos de subida.</li>
+					<li><strong>Preservação:</strong> Lembre-se: não deixe nada além de pegadas e não tire nada além de fotos.</li>
+				</ul>
+				<p>Conquiste o topo do Morro do Morcego e descubra por que temos orgulho de chamar Itajaí de lar.</p>
+			`
+		},
+		{
+			slug: "vida-noturna-itajai-onde-ir-beira-rio",
+			title: "Vida Noturna em Itajaí: Um guia para relaxar na Avenida Beira Rio",
+			date: "19 de Março, 2026",
+			image: "https://images.unsplash.com/photo-1514525253361-b83f85dfd75c?auto=format&fit=crop&q=80&w=1200",
+			content: `
+				<p>Quando as luzes do porto se acendem, a Avenida Beira Rio se transforma. É o coração pulsante da vida noturna de Itajaí, reunindo o que há de mais moderno em entretenimento no litoral catarinense.</p>
+
+				<h2>Alta Gastronomia e Vibes Relax</h2>
+				<p>Seja você um fã de drinks artesanais, sushis premium ou um bom churrasco gaúcho no litoral, a Beira Rio tem de tudo. A brisa que sopra do rio Itajaí-Açu torna as noites aqui incomparáveis.</p>
+
+				<h3>Destaques da Noite Itajaiense:</h3>
+				<ul>
+					<li><strong>Gastrobares:</strong> Espaços que unem alta gastronomia a um ambiente despojado para networking.</li>
+					<li><strong>Piquenique Noturno:</strong> As áreas de gramado no calçadão são hubs sociais perfeitos para relaxar.</li>
+					<li><strong>Atmosfera de Hub Marítimo:</strong> Assistir aos navios passarem enquanto você janta é uma experiência exclusiva de Itajaí.</li>
+				</ul>
+				<p>Termine seu dia de trabalho em Itajaí nos roteiros noturnos que provam que nossa cidade nunca dorme, ela apenas se ilumina.</p>
+			`
+		},
+		{
+			slug: "economica-do-mar-itajai-investir-crescimento",
+			title: "Itajaí e a Economia do Mar: Por que investir na cidade agora?",
+			date: "16 de Março, 2026",
+			image: "https://images.unsplash.com/photo-1494412519320-aa613dfb7738?auto=format&fit=crop&q=80&w=1200",
+			content: `
+				<p>O mar não é apenas o horizonte de Itajaí; é o seu motor econômico global. A "Economia Azul" está transformando a nossa cidade em uma das mais dinâmicas do Brasil para novos investimentos e inovação logística.</p>
+
+				<h2>Porto e Logística como Diferenciais</h2>
+				<p>Com o Porto de Itajaí conectando nossa região a todos os continentes, novas oportunidades em comércio exterior, corretagem e tecnologia portuária surgem todos os dias. Estar no digital em uma cidade assim é ter alcance global.</p>
+
+				<h3>Pilares do Crescimento de Itajaí:</h3>
+				<ul>
+					<li><strong>Setor Náutico:</strong> Marina Itajaí e estaleiros de luxo atraem capital de alto giro.</li>
+					<li><strong>Tecnologia em Logística:</strong> Startups catarinenses transformando as operações portuárias mundiais.</li>
+					<li><strong>Serviços de Marketing de Performance:</strong> Negócios locais que precisam escalar para o mercado internacional.</li>
+				</ul>
+				<p>Investir em Itajaí em 2026 é apostar em um mercado que tem raízes tradicionais mas cresce com a velocidade da tecnologia digital moderna.</p>
+			`
+		},
+		{
 			slug: "como-escalar-seu-negocio-local-com-trafego-pago",
 			title: "Como escalar seu negócio local em Itajaí com tráfego pago",
 			date: "28 de Março, 2026",
