@@ -1,0 +1,42 @@
+---
+// arquivo: src/components/Team.astro
+const team = [
+	{ name: "Lucas Mendes", role: "Diretor Criativo", img: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=400" },
+	{ name: "Beatriz Silva", role: "Head de Estratégia", img: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=400" },
+	{ name: "Thiago Oliveira", role: "Dev Principal", img: "https://images.unsplash.com/photo-1599566150163-29194dcaad36?auto=format&fit=crop&q=80&w=400" },
+	{ name: "Fernanda Costa", role: "Designer Gráfica", img: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=400" }
+];
+---
+
+<section class="team-section">
+	<div class="container text-center stagger-in">
+		<h2>As Mentes Por Trás da <span class="text-primary">Mágica.</span></h2>
+		
+		<div class="team-grid">
+			{team.map(member => (
+				<div class="member">
+					<div class="img-wrapper">
+						<img src={member.img} alt={member.name} />
+					</div>
+					<h3>{member.name}</h3>
+					<p>{member.role}</p>
+				</div>
+			))}
+		</div>
+	</div>
+</section>
+
+<style>
+	.team-section { padding: var(--section-padding) 0; border-top: 1px solid var(--color-border); }
+	h2 { font-size: clamp(32px, 5vw, 56px); margin-bottom: 64px; }
+	.team-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+	.member { text-align: left; }
+	.img-wrapper { margin-bottom: 24px; overflow: hidden; filter: grayscale(100%); transition: 0.4s ease; aspect-ratio: 3/4; }
+	.img-wrapper img { width: 100%; height: 100%; object-fit: cover; }
+	.member:hover .img-wrapper { filter: grayscale(0%); }
+	h3 { font-family: var(--font-heading); font-size: 20px; text-transform: uppercase; margin-bottom: 4px; }
+	p { font-size: 14px; font-weight: 700; color: var(--color-primary); }
+
+	@media (max-width: 900px) { .team-grid { grid-template-columns: repeat(2, 1fr); } }
+	@media (max-width: 480px) { .team-grid { grid-template-columns: 1fr; } }
+</style>

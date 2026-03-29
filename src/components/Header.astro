@@ -1,0 +1,78 @@
+---
+// arquivo: src/components/Header.astro
+---
+<header class="header">
+	<div class="container header-inner">
+		<div class="logo">
+			VIRADA <span class="asterisk text-primary">*</span>
+		</div>
+		
+		<nav class="nav">
+			<a href="#">Início</a>
+			<a href="#sobre">Sobre Nós</a>
+			<a href="#servicos">Serviços</a>
+			<a href="#portfolio">Portfólio</a>
+			<a href="#contato">Contato</a>
+		</nav>
+
+		<div class="actions">
+			<!-- Ícone de busca simbólico -->
+			<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: 16px; cursor: pointer;">
+				<circle cx="11" cy="11" r="8"></circle>
+				<line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+			</svg>
+			<a href="#contato" class="btn btn-black">Pronto para Começar? *</a>
+		</div>
+	</div>
+</header>
+
+<style>
+	.header {
+		padding: 24px 0;
+		border-bottom: 2px solid var(--color-border);
+		position: sticky;
+		top: 0;
+		background: var(--color-bg);
+		z-index: 100;
+	}
+	.header-inner {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	.logo {
+		font-family: var(--font-display);
+		font-size: 36px;
+		letter-spacing: -1px;
+		display: flex;
+		align-items: center;
+	}
+	.asterisk {
+		font-size: 42px;
+		line-height: 0;
+		margin-left: 4px;
+		margin-top: 12px;
+	}
+	.nav {
+		display: flex;
+		gap: 32px;
+	}
+	.nav a {
+		text-decoration: none;
+		color: var(--color-text);
+		font-weight: 500;
+		font-size: 15px;
+		transition: color 0.2s;
+	}
+	.nav a:hover {
+		color: var(--color-primary);
+	}
+	.actions {
+		display: flex;
+		align-items: center;
+	}
+
+	@media (max-width: 900px) {
+		.nav { display: none; } /* Dropdown sanduíche omitido por simplicidade visual do MVP */
+	}
+</style>

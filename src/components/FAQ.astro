@@ -1,0 +1,51 @@
+---
+// arquivo: src/components/FAQ.astro
+const faq = [
+	{ q: "Quais serviços vocês oferecem?", a: "Oferecemos uma gama completa de soluções, incluindo branding, web design, SEO, campanhas pagas e social media." },
+	{ q: "Quem são os clientes típicos da agência?", a: "Trabalhamos com pequenas e médias empresas locais de Itajaí e região que buscam escalar sua presença digital e vendas." },
+	{ q: "Qual o diferencial de vocês?", a: "Focamos em design de impacto (premium) aliado a estratégias transparentes e centradas em conversão. Sem caos, apenas resultados." },
+	{ q: "Podem me mostrar o portfólio completo?", a: "Sim, entre em contato e agendamos uma demonstração mostrando cases reais no seu nicho." }
+];
+---
+
+<section class="faq-section">
+	<div class="container stagger-in">
+		<div class="header">
+			<h2>Tudo o que Você Precisa <span class="asterisk text-outline">*</span> <br/>
+			Saber Sobre <span class="text-primary">Trabalhar Conosco.</span></h2>
+		</div>
+
+		<div class="faq-list">
+			{faq.map((item, index) => (
+				<details class="faq-item" name="faq-accordion">
+					<summary>
+						{item.q}
+						<span class="icon">+</span>
+					</summary>
+					<div class="answer"><p>{item.a}</p></div>
+				</details>
+			))}
+		</div>
+	</div>
+</section>
+
+<style>
+	.faq-section { padding: var(--section-padding) 0; }
+	.header { text-align: center; margin-bottom: 60px; }
+	.asterisk { font-family: var(--font-display); font-size: 64px; vertical-align: middle; }
+	h2 { font-size: clamp(36px, 5vw, 64px); letter-spacing: -1px; }
+
+	.faq-list { max-width: 800px; margin: 0 auto; border-top: 1px solid var(--color-border); }
+	.faq-item { border-bottom: 1px solid var(--color-border); }
+	summary {
+		display: flex; justify-content: space-between; align-items: center;
+		padding: 32px 0; font-family: var(--font-heading); font-size: 20px;
+		font-weight: 600; text-transform: uppercase; cursor: pointer;
+		list-style: none; /* Hide default arrow */
+	}
+	summary::-webkit-details-marker { display: none; }
+	.icon { font-size: 24px; color: var(--color-primary); font-family: var(--font-body); transition: 0.3s; }
+	
+	details[open] summary .icon { transform: rotate(45deg); }
+	.answer { padding-bottom: 32px; padding-right: 48px; }
+</style>

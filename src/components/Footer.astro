@@ -1,26 +1,122 @@
 ---
 // arquivo: src/components/Footer.astro
 ---
-<section class="cta">
-	<div class="container">
-		<h2>Pronto para começar?</h2>
-		<form id="f">
-			<input type="email" placeholder="seu@email.com" required>
-			<button type="submit">Entrar na lista</button>
-		</form>
+<footer class="footer">
+	<div class="footer-bg-icon">*</div>
+	
+	<div class="container pb-120 stagger-in">
+		<div class="footer-grid">
+			<div class="footer-brand">
+				<h2>VIRADA</h2>
+				<p>Transformando negócios locais com design de impacto elevado e estratégias de alta conversão.</p>
+				<div class="socials">
+					<a href="#" aria-label="Facebook">f</a>
+					<a href="#" aria-label="Instagram">ig</a>
+					<a href="#" aria-label="Twitter">tw</a>
+					<a href="#" aria-label="LinkedIn">in</a>
+				</div>
+			</div>
+
+			<div class="footer-links">
+				<h4>Empresa</h4>
+				<ul>
+					<li><a href="#">Sobre Nós</a></li>
+					<li><a href="#">Nosso Portfólio</a></li>
+					<li><a href="#">Depoimentos</a></li>
+					<li><a href="#">Carreiras</a></li>
+				</ul>
+			</div>
+
+			<div class="footer-links">
+				<h4>Serviços</h4>
+				<ul>
+					<li><a href="#">Web Design</a></li>
+					<li><a href="#">Marketing Digital</a></li>
+					<li><a href="#">Estratégia SEO</a></li>
+					<li><a href="#">Gestão de Tráfego</a></li>
+				</ul>
+			</div>
+
+			<div class="footer-contact">
+				<h4>Fale Conosco</h4>
+				<p>contato@virada.com.br</p>
+				<p>+55 (47) 99999-9999</p>
+				<p>Itajaí, Santa Catarina</p>
+			</div>
+		</div>
 	</div>
-</section>
-<footer>
-	<div class="container foot">
-		<div><h3>Taskflow</h3><p>Zero caos.</p></div>
-		<div class="copy">© 2025 Taskflow.</div>
+
+	<div class="footer-bottom border-top">
+		<div class="container flex-between">
+			<p>© 2025 Virada Marketing Digital. Todos os direitos reservados.</p>
+			<p>Criado com *</p>
+		</div>
 	</div>
 </footer>
+
 <style>
-	.cta { padding: 100px 0; background: linear-gradient(135deg, var(--color-primary), var(--color-secondary)); text-align: center; color: white; }
-	form { display: flex; max-width: 500px; margin: 32px auto; gap: 8px; }
-	input { flex: 1; padding: 16px; border-radius: 8px; border: none; }
-	button { background: var(--color-bg); color: white; border: none; padding: 0 32px; border-radius: 8px; font-weight: 700; }
-	footer { padding: 80px 0 40px; background: #050508; border-top: 1px solid var(--color-border); }
-	.foot { display: flex; justify-content: space-between; }
+	.footer {
+		background: var(--color-bg);
+		border-top: 1px solid var(--color-border);
+		position: relative;
+		overflow: hidden;
+		padding-top: 100px;
+	}
+	.footer-bg-icon {
+		position: absolute;
+		right: -100px;
+		top: -50px;
+		font-family: var(--font-display);
+		font-size: 800px;
+		line-height: 0.5;
+		color: var(--color-primary);
+		opacity: 0.03;
+		pointer-events: none;
+		z-index: 0;
+	}
+	.pb-120 { padding-bottom: 80px; position: relative; z-index: 1;}
+	.footer-grid {
+		display: grid;
+		grid-template-columns: 2fr 1fr 1fr 1.5fr;
+		gap: 60px;
+	}
+	.footer-brand h2 {
+		font-size: 40px;
+		letter-spacing: -1px;
+		margin-bottom: 24px;
+	}
+	.footer-brand p {
+		max-width: 300px;
+		margin-bottom: 32px;
+	}
+	.socials { display: flex; gap: 16px; font-family: var(--font-heading); font-weight: bold; text-transform: uppercase; }
+	.socials a {
+		width: 40px; height: 40px; border: 1px solid var(--color-border);
+		display: flex; align-items: center; justify-content: center;
+		color: var(--color-text); text-decoration: none; transition: 0.3s;
+	}
+	.socials a:hover { border-color: var(--color-primary); color: var(--color-primary); }
+
+	h4 { font-size: 20px; margin-bottom: 24px; color: var(--color-text); }
+	ul { list-style: none; display: flex; flex-direction: column; gap: 16px; }
+	ul a { color: var(--color-text-muted); text-decoration: none; font-weight: 500; transition: 0.3s; }
+	ul a:hover { color: var(--color-primary); }
+	.footer-contact p { margin-bottom: 16px; font-weight: 500; color: var(--color-text-muted); }
+
+	.footer-bottom {
+		border-top: 1px solid var(--color-border);
+		padding: 24px 0;
+		position: relative;
+		z-index: 1;
+	}
+	.flex-between { display: flex; justify-content: space-between; align-items: center; }
+	.footer-bottom p { font-size: 14px; margin: 0; }
+
+	@media (max-width: 900px) {
+		.footer-grid { grid-template-columns: 1fr 1fr; gap: 48px; }
+	}
+	@media (max-width: 600px) {
+		.footer-grid { grid-template-columns: 1fr; }
+		.flex-between { flex-direction: column; gap: 16px; text-align: center; }
+	}
 </style>

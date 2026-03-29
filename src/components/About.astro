@@ -1,0 +1,115 @@
+---
+// arquivo: src/components/About.astro
+---
+
+<section class="about-section">
+	<div class="container about-grid stagger-in">
+		<div class="visual">
+			<div class="image-wrapper">
+				<img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=600" alt="Processo de trabalho" />
+				<div class="asterisk-overlay">*</div>
+			</div>
+		</div>
+		<div class="content">
+			<h2>Trabalhamos de <span class="text-outline">Forma Inteligente</span>, Um Esforço que Conta.</h2>
+			<p>
+				Deixe-nos guiar seu negócio até o topo do mercado digital. 
+				Avaliamos, planejamos e executamos com precisão metodológica para garantir o sucesso.
+			</p>
+
+			<div class="progress-bars">
+				<div class="bar-item">
+					<div class="bar-header">
+						<span>Design de Web</span>
+						<span>90%</span>
+					</div>
+					<div class="bar-bg"><div class="bar-fill" style="width: 90%"></div></div>
+				</div>
+				<div class="bar-item">
+					<div class="bar-header">
+						<span>Estratégia SEO</span>
+						<span>85%</span>
+					</div>
+					<div class="bar-bg"><div class="bar-fill" style="width: 85%"></div></div>
+				</div>
+				<div class="bar-item">
+					<div class="bar-header">
+						<span>Marketing Digital</span>
+						<span>95%</span>
+					</div>
+					<div class="bar-bg"><div class="bar-fill" style="width: 95%"></div></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<style>
+	.about-section {
+		padding: var(--section-padding) 0;
+	}
+	.about-grid {
+		display: grid;
+		grid-template-columns: 1fr 1.2fr;
+		gap: 80px;
+		align-items: center;
+	}
+	.image-wrapper {
+		position: relative;
+		border-radius: 12px;
+		overflow: hidden;
+	}
+	.image-wrapper img {
+		width: 100%;
+		aspect-ratio: 4/3;
+		object-fit: cover;
+		filter: grayscale(100%);
+		transition: 0.5s;
+	}
+	.image-wrapper:hover img {
+		filter: grayscale(0%);
+	}
+	.asterisk-overlay {
+		position: absolute;
+		bottom: 20px;
+		right: 20px;
+		font-family: var(--font-display);
+		font-size: 80px;
+		line-height: 0.5;
+		color: var(--color-primary);
+	}
+	h2 {
+		font-size: clamp(36px, 5vw, 64px);
+		margin-bottom: 24px;
+	}
+	p {
+		margin-bottom: 40px;
+	}
+	.bar-item {
+		margin-bottom: 24px;
+	}
+	.bar-header {
+		display: flex;
+		justify-content: space-between;
+		font-family: var(--font-heading);
+		font-weight: 600;
+		text-transform: uppercase;
+		margin-bottom: 8px;
+	}
+	.bar-bg {
+		height: 4px;
+		background: var(--color-border);
+		width: 100%;
+		border-radius: 4px;
+		overflow: hidden;
+	}
+	.bar-fill {
+		height: 100%;
+		background: var(--color-primary);
+	}
+
+	@media (max-width: 900px) {
+		.about-grid { grid-template-columns: 1fr; gap: 40px; }
+		.image-wrapper img { aspect-ratio: 16/9; }
+	}
+</style>

@@ -1,21 +1,29 @@
 ---
 // arquivo: src/pages/index.astro
 import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
 import Hero from '../components/Hero.astro';
-import Features from '../components/Features.astro';
-import HowItWorks from '../components/HowItWorks.astro';
+import Stats from '../components/Stats.astro';
+import About from '../components/About.astro';
+import Portfolio from '../components/Portfolio.astro';
 import Testimonials from '../components/Testimonials.astro';
-import Pricing from '../components/Pricing.astro';
+import Team from '../components/Team.astro';
+import FAQ from '../components/FAQ.astro';
+import ContactCTA from '../components/ContactCTA.astro';
 import Footer from '../components/Footer.astro';
 ---
 
-<Layout title="Virada Marketing Digital — Taskflow" description="Transforme sua presença digital com sites de alta conversão e gestão impecável.">
+<Layout title="Virada Marketing Digital | Criação de Histórias, Captura de Atenção" description="Agência digital especializada em design e conversão em Itajaí.">
+	<Header />
 	<main>
 		<Hero />
-		<Features />
-		<HowItWorks />
+		<Stats />
+		<About />
+		<Portfolio />
 		<Testimonials />
-		<Pricing />
-		<Footer />
+		<Team />
+		<FAQ />
+		<ContactCTA />
 	</main>
+	<Footer />
 </Layout>

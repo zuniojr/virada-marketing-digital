@@ -1,0 +1,61 @@
+---
+// arquivo: src/components/Stats.astro
+const stats = [
+	{ value: "95%", label: "Retenção de Clientes" },
+	{ value: "+62", label: "Prêmios Conquistados" },
+	{ value: "1.8k", label: "Projetos Entregues" },
+	{ value: "445+", label: "Especialistas na Equipe" }
+];
+---
+
+<section class="stats-section">
+	<div class="container text-center">
+		<h2>Nosso Impacto em <span class="text-primary">Números e Resultados.</span></h2>
+		
+		<div class="stats-grid stagger-in">
+			{stats.map(s => (
+				<div class="stat-item">
+					<h3>{s.value}</h3>
+					<p>{s.label}</p>
+				</div>
+			))}
+		</div>
+	</div>
+</section>
+
+<style>
+	.stats-section {
+		padding: var(--section-padding) 0;
+		border-bottom: 1px solid var(--color-border);
+	}
+	h2 {
+		font-size: clamp(24px, 4vw, 36px);
+		margin-bottom: 60px;
+		max-width: 600px;
+		margin-inline: auto;
+	}
+	.stats-grid {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		gap: 32px;
+	}
+	.stat-item h3 {
+		font-family: var(--font-display);
+		font-size: clamp(48px, 6vw, 72px);
+		margin-bottom: 8px;
+	}
+	.stat-item p {
+		font-weight: 700;
+		text-transform: uppercase;
+		font-size: 14px;
+		letter-spacing: 1px;
+		color: var(--color-text);
+	}
+
+	@media (max-width: 900px) {
+		.stats-grid { grid-template-columns: repeat(2, 1fr); gap: 48px; }
+	}
+	@media (max-width: 480px) {
+		.stats-grid { grid-template-columns: 1fr; }
+	}
+</style>
